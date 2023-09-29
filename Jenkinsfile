@@ -4,8 +4,8 @@ pipeline{
             stage('Build Images'){
                 steps{
                     sh '''
-                    docker build -t gcr.io/lbg-mea-14/ja-lbg-python-app:latest ./db
-                    docker build -t gcr.io/lbg-mea-14/ja-lbg-python-app:${BUILD_NUMBER} ./db
+                    docker build -t gcr.io/lbg-mea-14/ja-lbg-python-app:latest .
+                    docker build -t gcr.io/lbg-mea-14/ja-lbg-python-app:${BUILD_NUMBER} .
                     '''
                 }
             }
