@@ -5,7 +5,7 @@ pipeline{
                 steps{
                     sh '''
                     docker build -t gcr.io/lbg-mea-14/ja-lbg-python-app:latest .
-                    docker build -t gcr.io/lbg-mea-14/ja-lbg-python-app:${BUILD_NUMBER} .
+                    docker build -t gcr.io/lbg-mea-14/ja-lbg-python-app:$BUILD_NUMBER .
                     '''
                 }
             }
@@ -13,7 +13,7 @@ pipeline{
                 steps{
                     sh '''
                     docker push gcr.io/lbg-mea-14/ja-lbg-python-app:latest
-                    docker push gcr.io/lbg-mea-14/ja-lbg-python-app:${BUILD_NUMBER}
+                    docker push gcr.io/lbg-mea-14/ja-lbg-python-app:$BUILD_NUMBER
                     '''
                 }
             }
@@ -21,7 +21,7 @@ pipeline{
                 steps{
                     sh '''
                     docker rmi gcr.io/lbg-mea-14/ja-lbg-python-app
-                    docker rmi gcr.io/lbg-mea-14/ja-lbg-python-app:${BUILD_NUMBER}
+                    docker rmi gcr.io/lbg-mea-14/ja-lbg-python-app:$BUILD_NUMBER
                     '''
                 }
             }
