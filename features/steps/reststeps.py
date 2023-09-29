@@ -44,6 +44,7 @@ def step_click_put_button(context):
 def step_click_delete_button(context):
     deleteButton = context.browser.find_element(By.ID, 'buttonDelete')
     context.browser.execute_script("arguments[0].scrollIntoView();", deleteButton)
+    time.sleep(2)
     deleteButton.click()
 
 @then('The READ ALL section will populate with JSON containing _id "{_id}", name "{name}", description "{description}", and price "{price}"')
